@@ -39,23 +39,27 @@ var up=0,lo=0,nu=0;
         if(equ==0)
             out.innerHTML+="Strong Password<br>minimum steps : 0";
         else
-        out.innerHTML+="Weak Password<br>minimum steps : "+equ;
+        out.innerHTML+="Weak Password<br>three characters repeated<br>minimum steps : "+equ;
     }
     //if length is greater than 20
     else if(len>20){
         var less=len-20;
             less+=tot+equ;
-            out.innerHTML+="Weak Password<br>minimum steps : "+less;
+            out.innerHTML+="Weak Password<br>length is less<br>minimum steps : "+less;
     }
     //if ength is lesser than 6
     else if(len<=6){
         var high=6-len;
         high+=equ;
             if(up>=1 && lo>=1 && nu>=1){
-                out.innerHTML+="Weak Password<br>minimum steps : "+high;    
+                out.innerHTML+="Weak Password<br>length is high<br>minimum steps : "+high;    
             }
             else if(tot==high || tot>high){
-                out.innerHTML+="Weak Password<br>minimum steps : "+tot;    
+                out.innerHTML+="Weak Password";    
+                if(up<1)out.innerHTML+="<br>Upper case missing";
+                if(lo<1)out.innerHTML+="<br>Lower case missing";
+                if(nu<1)out.innerHTML+="<br>Number case missing";
+                out.innerHTML+="<br>minimum steps : "+tot;    
             }
             else if(tot<high){
                 out.innerHTML+="Weak Password<br>minimum steps : "+high;
@@ -63,6 +67,10 @@ var up=0,lo=0,nu=0;
     }
     //when length is correct but something is not present up,lo,nu
     else{
-        out.innerHTML+="Weak Password<br>minimum steps : "+tot;
+        out.innerHTML+="Weak Password";    
+        if(up<1)out.innerHTML+="<br>Upper case missing";
+        if(lo<1)out.innerHTML+="<br>Lower case missing";
+        if(nu<1)out.innerHTML+="<br>Number case missing";
+        out.innerHTML+="<br>minimum steps : "+tot;
     }
 }
