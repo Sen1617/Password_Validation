@@ -62,7 +62,7 @@ var up=0,lo=0,nu=0;
                 out.innerHTML+="<br>minimum steps : "+tot;    
             }
             else if(tot<high){
-                out.innerHTML+="Weak Password<br>minimum steps : "+high;
+                out.innerHTML+="Weak Password<br>length is less<br>minimum steps : "+high;
             }
     }
     //when length is correct but something is not present up,lo,nu
