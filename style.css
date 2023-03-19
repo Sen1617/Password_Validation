@@ -15,7 +15,7 @@ body{
     border-radius: 20px;
     height: 400px;
     width: 380px;
-    
+    margin-top: 10%;
     padding-top: 50px;
     display: grid;
     place-items: center;
